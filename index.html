@@ -52,16 +52,17 @@
   main{ margin-left:270px; }
   .hero{
     min-height:52vh; display:flex; align-items:flex-end;
-    padding:60px 60px 50px; position:relative; overflow:hidden;
+    padding: clamp(40px, 6vw, 70px) clamp(24px, 6vw, 80px) clamp(36px, 5vw, 50px);
+    position:relative; overflow:hidden;
     background: var(--panel);
   }
   .hero svg{ position:absolute; inset:0; width:100%; height:100%; }
-  .hero-text{ position:relative; max-width:640px; }
+  .hero-text{ position:relative; max-width:min(900px, 100%); }
   .hero-text .eyebrow{ color:var(--accent-dark); font-size:0.8rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.12em; font-weight:600; }
   .hero-text h2{ font-size:2.4rem; line-height:1.2; color:var(--panel-ink); }
   .hero-text p{ color:var(--slate-dark); margin-top:14px; font-size:1.05rem; max-width:54ch; }
 
-  section{ padding:60px 60px; border-bottom:1px solid var(--rule); max-width:820px; }
+  section{ padding: clamp(40px, 6vw, 70px) clamp(24px, 6vw, 80px); border-bottom:1px solid var(--rule); width:100%; }
   section:last-of-type{ border-bottom:none; }
   section > h2{ font-size:1.5rem; margin-bottom:30px; }
   section > h2::after{ content:""; display:block; width:52px; height:3px; background:var(--accent); margin-top:14px; }
@@ -81,16 +82,16 @@
   .pres-title{ font-weight:600; }
   .pres-meta{ color:var(--slate); font-size:0.88rem; margin-top:3px; }
 
-  .skills-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:26px 30px; }
+  .skills-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:26px 30px; }
   .skill-label{ color:var(--accent); font-size:0.82rem; margin-bottom:6px; }
   .skill-val{ font-size:0.94rem; }
 
-  .course-cols{ display:grid; grid-template-columns:1fr 1fr; gap:0 40px; font-size:0.9rem; color:var(--slate); }
+  .course-cols{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0 40px; font-size:0.9rem; color:var(--slate); }
   .course-cols h3{ font-size:0.93rem; color:var(--ink); margin:18px 0 8px; font-family:'Inter',sans-serif; font-weight:600; }
   .course-cols h3:first-child{ margin-top:0; }
   .course-cols p{ margin:0 0 4px; }
 
-  footer{ padding:44px 60px 80px; color:var(--slate); font-size:0.86rem; max-width:820px; }
+  footer{ padding: clamp(36px, 5vw, 44px) clamp(24px, 6vw, 80px) clamp(50px, 8vw, 80px); color:var(--slate); font-size:0.86rem; width:100%; }
 
   @media (max-width:860px){
     .sidebar{ position:static; width:100%; height:auto; flex-direction:row; align-items:center; flex-wrap:wrap; padding:26px 24px; }
